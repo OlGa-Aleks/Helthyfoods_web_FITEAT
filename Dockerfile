@@ -1,5 +1,5 @@
 ﻿# Этап сборки: используем SDK для сборки приложения
-FROM mcr.microsoft.com/dotnet/core/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /app
 
 # Копируем файл проекта и восстанавливаем зависимости
@@ -11,7 +11,7 @@ COPY . .
 RUN dotnet publish -c Release -o out
 
 # Этап выполнения: используем образ ASP.NET Core для запуска приложения
-FROM mcr.microsoft.com/dotnet/core/aspnet:5.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS runtime
 WORKDIR /app
 
 # Копируем опубликованное приложение из этапа сборки
