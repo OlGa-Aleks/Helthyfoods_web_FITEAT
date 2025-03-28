@@ -21,3 +21,6 @@ secrets.json
 # Конфигурация IDE
 *.swp
 *.sln.docstates
+
+dbsettings.json
+dbsettings.json 
