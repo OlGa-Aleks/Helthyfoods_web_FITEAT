@@ -1,0 +1,23 @@
+﻿# Папки сборки
+bin/
+obj/
+.vs/
+publish/
+
+# Логи и кэш
+*.log
+**/logs/
+**/logs/*.log
+**/logs/**/*.log
+
+# Настройки среды
+*.user
+*.suo
+*.vsconfig
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Конфигурация IDE
+*.swp
+*.sln.docstates
