@@ -24,3 +24,12 @@ secrets.json
 
 dbsettings.json
 dbsettings.json 
+
+# Visual Studio specific files
+.vs/
+.vscode/
+# Ignore applicationhost.config (IIS Express)
+applicationhost.config
+# Ignore dtbcache files
+.dtbcache.v2
+
