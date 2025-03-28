@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<style>
+    .contacts-container {
+        background-color: #fff;
+        padding: 60px 40px; /* Внутренние отступы */
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-top: 120px; /* Увеличенный отступ сверху, чтобы контейнер не прилипал к шапке */
+        margin-left: auto; /* Центрирование контейнера по горизонтали */
+        margin-right: auto; /* Центрирование контейнера по горизонтали */
+        width: 100%;
+        max-width: 900px; /* Максимальная ширина контейнера */
+        padding-left: 30px; /* Немного уменьшены внутренние отступы для лучшего вида */
+        padding-right: 30px; /* Немного уменьшены внутренние отступы для лучшего вида */
+
+        margin-bottom: 600px; /* Этот отступ добавляет пространство между контактами и футером */
+    }
+
+    h1 {
+        color: #36d0d7;
+        margin-bottom: 20px;
+    }
+
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 10px 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #cc6ce5;
+        color: white;
+        font-weight: bold;
+    }
+
+    td {
+        font-size: 16px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #2980b9;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<div class="contacts-container">
+    <h1>Контакты</h1>
+    <table>
+        <tr>
+            <th> </th>
+            <th>Контакты</th>
+        </tr>
+        <tr>
+            <td>Телефон:</td>
+            <td><a href="tel:+123456789">+7 987 435 678</a></td>
+        </tr>
+        <tr>
+            <td>Электронная почта:</td>
+            <td><a href="mailto:info@fiteats.com">info.fiteats@gmail.com</a></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,52 @@
+﻿@model Helthy_Shop.Data.Models.Dish
+
+<main class="product-page">
+    <div class="product-info">
+        <div class="product-image">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="@Model.img" alt="@Model.name"></div>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h1>@Model.name</h1>
+            <div class="product-tags">
+                @foreach (var tag in Model.Tags)
+                {
+                    <span class="tag">@tag.dietName</span>
+                }
+            </div>
+
+            <div class="price-and-button">
+                <h3 class="price-description">Цена: @Model.price ₽</h3>
+                <button class="add-to-cart-cartfood" data-product-id="@Model.id">Добавить в корзину 🛒</button>
+            </div>
+
+            <p class="product-description">@Model.description</p>
+            <p class="product-description">Вес: @Model.weight г</p>
+            <p class="calorie-description">Калории: @Model.calories ккал</p>
+
+            <h2>Состав:</h2>
+            <p class="product-description">@Model.composition</p>
+
+            <p style="font-weight: bold; font-size: 18px;">Макронутриенты на порцию:</p>
+            <table>
+                <tbody>
+                    <tr><td>Белки:</td><td>@Model.micronutrients.Split('/')[0]</td></tr>
+                    <tr><td>Жиры:</td><td>@Model.micronutrients.Split('/')[1]</td></tr>
+                    <tr><td>Углеводы:</td><td>@Model.micronutrients.Split('/')[2]</td></tr>
+                </tbody>
+            </table>
+
+            @if (!string.IsNullOrEmpty(Model.allergens))
+            {
+                <p style="font-weight: bold; font-size: 18px;">Аллергены:</p>
+                <p class="product-description">@Model.allergens</p>
+            }
+        </div>
+    </div>
+</main>
+

@@ -1,0 +1,45 @@
+﻿@model List<Helthy_Shop.Data.Models.ShopCartItem>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="cart-container p-4 bg-white shadow rounded">
+                <h1 class="text-center mb-4">Корзина товаров</h1>
+
+                <div id="cart-items">
+                    @if (Model.Any())
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="cart-item d-flex align-items-center border-bottom py-3" data-id="@item.dish.id">
+                                <!-- Изображение товара -->
+                                <img src="@Url.Content(item.dish.img)" alt="@item.dish.name" class="cart-item-img rounded">
+
+                                <!-- Информация о товаре -->
+                                <div class="cart-item-details flex-grow-1 ml-3">
+                                    <h5 class="mb-1">@item.dish.name</h5>
+                                    <p class="text-muted item-calories">@item.dish.calories ккал</p>
+                                    <p class="font-weight-bold">@item.price ₽</p>
+                                </div>
+
+                                <!-- Кнопка удаления -->
+                                <button class="remove-from-cart btn btn-danger" data-product-id="@item.dish.id">Удалить</button>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-center">Ваша корзина пуста</p>
+                    }
+                </div>
+
+                <!-- Итоговая стоимость -->
+                <div class="cart-summary text-right mt-4">
+                    <h3>Итоговая стоимость: <span id="total-price">@Model.Sum(i => i.price)</span> ₽</h3>
+                    <button id="checkout-button" class="btn btn-success mt-3">Оплатить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

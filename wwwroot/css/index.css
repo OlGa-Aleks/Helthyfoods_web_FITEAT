@@ -1,0 +1,109 @@
+﻿
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Шапка сайта */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo-img {
+    width: 120px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+}
+
+    .nav ul li {
+        margin: 0 20px;
+    }
+
+        .nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+.header-right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Футер */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    font-size: 14px;
+    margin-top: auto; /* Это свойство заставляет футер занимать нижнюю часть страницы */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Использование flexbox */
+    flex-direction: column; /* Элементы будут в колонку */
+    align-items: center; /* Центрирование всех элементов */
+    justify-content: center; /* Вертикальное выравнивание */
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-links {
+    margin-bottom: 10px;
+}
+
+.footer .social-link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+    .footer .social-link:hover {
+        display: flex; /* Делаем контейнер для ссылок флекс-контейнером */
+        justify-content: center; /* Центрируем ссылки по горизонтали */
+    }
+
+.footer .contacts-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+    .footer .contacts-link:hover {
+        text-decoration: underline;
+    }
+

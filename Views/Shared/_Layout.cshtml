@@ -1,0 +1,92 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - FITEATS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="@Url.Content("~/css/index.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/menu.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/cart.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/detail.css")" />
+
+
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="logo">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="@Url.Content("~/img/pppp.png")" alt="Логотип" class="logo-img" />
+            </a>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")">О нас</a></li>
+                <li><a href="@Url.Action("List", "Dishes")">Меню</a></li>
+                <li><a href="@Url.Action("Calculator", "Home")">Калькулятор калорий</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <a href="@Url.Action("CartView", "Cart")" class="cart-icon">🛒</a>
+            <a href="@Url.Action("AddForm", "Form")" class="login">Войти</a>
+        </div>
+    </header>
+
+    <!-- Динамический контент страницы -->
+    <main class="menu-page">
+        @RenderBody()
+    </main>
+
+
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> FITEATS</p>
+            <div class="social-links">
+                <a href="https://weba.telegram.org/" target="_blank" class="social-link">Telegram Bot</a>
+            </div>
+            <a href="@Url.Action("Contact", "Home")" class="contacts-link">Контакты</a>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top" style="display: none;">⬆</button>
+
+    <script>
+        // Автоматическое добавление текущего года в футер
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    @*<script src="/js/rendercatalog.js"></script>
+    <script src="/js/filterforprice.js"></script>*@
+
+    @*<script src="/js/two.js"></script>*@
+
+
+    @*<script src="/js/JavaScript.js"></script>*@
+    <script src="/js/cart.js"></script>
+
+
+    @*<script src="/js/ajax.js"></script>*@
+
+    <script src="@Url.Content("~/scripts/scroll_up.js")"></script>
+    <script src="@Url.Content("~/scripts/filtre_price.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

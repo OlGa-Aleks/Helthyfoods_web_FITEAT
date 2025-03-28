@@ -1,0 +1,133 @@
+﻿@model Helthy_Shop.Data.ViewModels.NewDishDTO
+
+
+@{
+    ViewData["Title"] = "Добавить товар";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="cart-container p-4 bg-white shadow rounded">
+                <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+                <form asp-action="AddDish" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Введите название товара" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Price"></label>
+                        <input asp-for="Price" class="form-control" placeholder="Введите цену товара" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="MealTime"></label>
+                        <select asp-for="MealTime" class="form-control">
+                            <option value="">Выберите приём пищи</option>
+                            <option value="Завтрак">Завтрак</option>
+                            <option value="Обед">Обед</option>
+                            <option value="Ужин">Ужин</option>
+                        </select>
+                        <span asp-validation-for="MealTime" class="text-danger"></span>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <label asp-for="Diets"></label>
+                        @Html.HiddenFor(model => model.Diets)
+                        <div>
+                            <label>
+                                <input type="checkbox" name="Diets" value="Веганская" /> Веганская
+                            </label>
+                            <label>
+                                <input type="checkbox" name="Diets" value="Вегетарианская" /> Вегетарианская
+                            </label>
+                            <label>
+                                <input type="checkbox" name="Diets" value="Без глютена" /> Без глютена
+                            </label>
+                            <label>
+                                <input type="checkbox" name="Diets" value="Без лактозы" /> Без лактозы
+                            </label>
+                            <label>
+                                <input type="checkbox" name="Diets" value="Без сахара" /> Без сахара
+                            </label>
+                        </div>
+                        <span asp-validation-for="Diets" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description"></label>
+                        <textarea asp-for="Description" class="form-control" placeholder="Введите описание товара"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Composition"></label>
+                        <textarea asp-for="Composition" class="form-control" placeholder="Введите состав товара"></textarea>
+                        <span asp-validation-for="Composition" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Calories"></label>
+                        <input asp-for="Calories" class="form-control" placeholder="Введите содержание калорий" />
+                        <span asp-validation-for="Calories" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Weight"></label>
+                        <input asp-for="Weight" class="form-control" placeholder="Введите вес блюда в г" />
+                        <span asp-validation-for="Weight" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Macronutrients"></label>
+                        <input asp-for="Macronutrients" class="form-control" placeholder="Введите макронутриенты (жиры/углеводы/белки)" />
+                        <span asp-validation-for="Macronutrients" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Allergens"></label>
+                        <input asp-for="Allergens" class="form-control" placeholder="Введите возможные аллергены" />
+                        <span asp-validation-for="Allergens" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Image"></label>
+                        <input asp-for="Image" type="file" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(Model?.ImagePath))
+                    {
+                        <div class="form-group mt-3">
+                            <label>Предварительный просмотр:</label>
+                            <img src="~/img/@Model.ImagePath" class="img-thumbnail" alt="Загруженное изображение" width="200" />
+                        </div>
+                    }
+
+                    <button type="submit" class="btn btn-success mt-3 w-100" id="checkout-button">Добавить товар</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        // Клиентский адаптер для кастомного валидатора "RequiredList"
+        $.validator.addMethod("requiredlist", function (value, element, params) {
+            // Проверяем, что хотя бы один чекбокс с данным именем отмечен
+            return $("input[name='" + element.name + "']:checked").length > 0;
+        });
+
+        $.validator.unobtrusive.adapters.addBool("requiredlist");
+    </script>
+}
+
+
+

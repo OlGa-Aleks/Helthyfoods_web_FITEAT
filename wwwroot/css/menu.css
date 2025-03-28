@@ -1,0 +1,493 @@
+﻿.menu-filters {
+    /* width: 25%; */
+
+   
+    width: auto; /* Позволяет растягиваться внутри col-md-3 */
+
+   
+
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: sticky; /* Фиксируем при прокрутке */
+
+    /* Убедитесь, что фильтры не выходят за пределы экрана */
+    overflow: hidden;
+}
+
+    .menu-filters h2 {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+.filter {
+    margin-bottom: 20px;
+}
+
+    .filter h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+/* Общие стили фильтров */
+.filter-container {
+    flex-shrink: 0;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box; /* Чтобы элементы не выходили за пределы контейнера */
+
+    max-width: 100%;
+    overflow: hidden;
+}
+    .filter-container h3 {
+        font-size: 17px;
+        color: #444;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }    
+
+    .filter-container:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+/* Прием пищи */
+.meal-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-height: 10px;
+}
+
+    .meal-filters label {
+        white-space: nowrap;
+        font-size: 15px;
+    }
+
+/* Калории */
+.calories-inputs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    max-height: 30px;
+}
+
+    .calories-inputs label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .calories-inputs input[type="number"] {
+        width: 70px;
+        height: 25px;
+        padding: 5px;
+    }
+
+.kcal-label {
+    margin-left: 2px;
+    color: #666;
+}
+
+/* Диеты */
+.diet-filters {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 15px;
+    max-height: 95px;
+}
+
+.diet-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Кнопка Применить */
+.apply-filters-btn {
+    width: 100%;
+    padding: 12px;
+    background: #36d0d7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 0 10px; /* Вверх 20px вместо 40px */
+    position: relative;
+    top: -10px; /* Дополнительный подъем */
+    transition: background 0.3s;
+}
+
+    .apply-filters-btn:hover {
+        background: #2ab4c0;
+    }
+
+/* Цена */
+.price-range-display {
+    margin: 15px 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+    .filter label {
+        display: inline-block; /* Обеспечивает одинаковую ширину для всех label */
+    font-size: 15px;
+    margin-bottom: 5px;
+    width: 100px; /* Устанавливаем фиксированную ширину для всех label */
+}
+
+    /* Стили для фильтра калорий */
+    .filter .calories-inputs {
+        display: flex;
+        gap: 10px; /* Расстояние между элементами */
+        align-items: center; /* Выравнивание по вертикали */
+        flex-wrap: wrap; /* Перенос на новую строку при недостатке места */
+    }
+
+        .filter .calories-inputs label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap; /* Запрещаем перенос текста */
+        }
+
+    .filter input[type="number"] {
+        width: 70px;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+/* Бегунок фильтра цены */
+.price-range {
+    width: 100%; /* Чтобы блок занял всю доступную ширину */
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+    .price-range input[type="range"] {
+        -webkit-appearance: none;
+        width: 50%; /* Каждый ползунок будет занимать половину контейнера */
+        height: 5px;
+        background: #ddd;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        box-sizing: border-box; /* Учитываем padding, если он будет */
+    }
+
+        .price-range input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px; /* Ширина кружка */
+            height: 15px; /* Высота кружка */
+            background: #cc6ce5;
+            border-radius: 50%; /* Делаем его круглым */
+            cursor: pointer;
+            transition: width 0.3s ease;
+        }
+
+
+/* Карточки товаров */
+.product-cards {
+    /*width: 70%;*/
+
+    display: grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));*/
+    gap: 20px;
+    
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    /* Изменения для размеров */
+    height: 560px; /* Устанавливаем фиксированную высоту для единообразия */
+
+    display: flex;
+    flex-direction: column; /* Устанавливаем вертикальную ориентацию для карточки */
+    justify-content: space-between; /* Распределяем пространство между элементами карточки */
+}
+    
+
+    .product-card img {
+        width: 100%; /* Задает ширину на весь контейнер */
+        height: 210px; /* Фиксированная высота для всех изображений */
+        object-fit: cover; /* Сохраняет пропорции и обрезает лишнее */
+        border-radius: 8px; /* Сохраняем округлые углы */
+    }
+
+    .product-card h3 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+.tags {
+    position: absolute; /* Фиксируем положение контейнера с тегами */
+    bottom: 120px; /* Расстояние от нижнего края карточки */
+    left: 50%; /* Центрируем контейнер по горизонтали */
+    transform: translateX(-50%); /* Точная центровка контейнера */
+
+    display: flex; /* Используем Flexbox для выравнивания тегов */
+    flex-wrap: wrap; /* Теги будут переноситься на новую строку, если не помещаются */
+    justify-content: center; /* Выравниваем теги по центру */
+    gap: 5px; /* Расстояние между тегами */
+    margin-top: 10px; /* Небольшой отступ сверху */
+    width: 100%; /* Ширина контейнера тегов — 100% от родительского элемента */
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #e0e0e0;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    max-width: 65%; /* Ограничиваем максимальную ширину тега, чтобы вмещалось 2 тега в строку */
+    white-space: nowrap; /* Запрещаем перенос текста внутри тега */
+    text-align: center; /* Центрируем текст внутри тега */
+}
+
+    .tag.vegan {
+        background-color: #a4e6a4;
+    }
+
+    .tag.vegatorian {
+        background-color: #88b388;
+    }
+
+    .tag.gluten-free {
+        background-color: #f9e68f;
+    }
+
+    .tag.dairy-free {
+        background-color: #ffe0e0;
+    }
+
+    .tag.sugar-free {
+        background-color: #f9c9f9;
+    }
+
+.product-price {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #333;
+    position: absolute; /* Фиксируем позицию кнопки внутри карточки */
+    bottom: 60px; /* Расстояние от нижнего края карточки */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Точная центровка кнопки */
+}
+
+/* Кнопка добавления в корзину */
+.add-to-cart {
+    min-width: 200px; /* Устанавливаем минимальную ширину кнопки */
+    width: 250px; /* Увеличьте ширину карточки, если она слишком узкая */
+    background-color: #36d0d7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Фиксируем позицию кнопки внутри карточки */
+    bottom: 10px; /* Расстояние от нижнего края карточки */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Точная центровка кнопки */
+}
+
+.add-to-cart_two {
+    min-width: 200px; /* Устанавливаем минимальную ширину кнопки */
+    width: 250px; /* Увеличьте ширину карточки, если она слишком узкая */
+    background-color: #cc6ce5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Фиксируем позицию кнопки внутри карточки */
+    bottom: 10px; /* Расстояние от нижнего края карточки */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Точная центровка кнопки */
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+.add-to-cart:focus {
+    outline: none;
+}
+
+/* Страница меню */
+.menu-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 20px;
+}
+
+/* Стили для ссылок на товары */
+.product-link {
+    text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+    color: inherit; /* Сохраняем цвет текста по умолчанию */
+}
+
+    .product-link h3 {
+        font-size: 20px;
+        margin-top: 10px;
+        transition: text-decoration 0.3s ease; /* Плавное появление подчеркивания */
+    }
+
+    /* Эффект подчеркивания при наведении */
+    .product-link:hover h3 {
+        text-decoration: underline; /* Подчеркивание при наведении */
+        color: #36d0d7; /* Цвет текста при наведении */
+    }
+/* Стили для кнопки "Вверх" */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #36d0d7;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+    .scroll-to-top:hover {
+        opacity: 1;
+    }
+
+.lazy-load {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+    .lazy-load.loaded {
+        opacity: 1;
+    }
+
+
+/* Футер */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-links {
+    margin-bottom: 10px;
+}
+
+.footer .social-link {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+    .footer .social-link:hover {
+        text-decoration: underline;
+    }
+
+.footer .contacts-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+    .footer .contacts-link:hover {
+        text-decoration: underline;
+    }
+
+.calories {
+    color: #36d0d7; /* Цвет совпадает с кнопкой */
+    font-size: 16px;
+    margin-top: 10px; /* Отступ для отделения от заголовка */
+
+    position: absolute; /* Фиксируем позицию кнопки внутри карточки */
+    bottom: 190px; /* Расстояние от нижнего края карточки */
+
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Точная центровка кнопки */
+}
+
+/* Стили для типа приема пищи */
+.meal-type {
+    color: #888; /* Светло-серый цвет */
+    font-size: 14px;
+    margin-top: 5px; /* Отступ сверху */
+
+    position: absolute; /* Фиксируем позицию кнопки внутри карточки */
+    bottom: 225px; /* Расстояние от нижнего края карточки */
+
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translateX(-50%); /* Точная центровка кнопки */
+}
+
+
+
+.text-center {
+    width: 100%;
+    text-align: center !important;
+}
+
+/* Изменяем цвет кнопки "Загрузить ещё" */
+#load-more {
+    background-color: #36d0d7; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    font-size: 16px; /* Размер шрифта */
+    border-radius: 4px; /* Скругление углов */
+    cursor: pointer; /* Указатель на кнопку */
+
+    display: block;
+    margin: 0 auto;
+}
+
+    /* Эффект при наведении */
+    #load-more:hover {
+        background-color: #2ab4c0; /* Цвет фона при наведении */
+        color: #fff; /* Цвет текста при наведении */
+    }
+
+
+
+
+
+

@@ -1,0 +1,237 @@
+/* Страница товара */
+.product-page {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product-info {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-details {
+    flex: 2;
+    padding: 20px;
+}
+
+.product-details h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.product-tags {
+    margin: 10px 0;
+}
+
+.product-tags.tag  {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.product-tags .tag.vegan {
+    background-color: #a4e6a4; 
+}
+
+.product-tags .tag.vegatorian {
+    background-color: #88b388; 
+}
+
+.product-tags .tag.gluten-free {
+    background-color: #f9e68f;
+}
+
+.product-tags .tag.sugar-free {
+    background-color: #f9c9f9; 
+}
+
+.product-description {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.product-details h2 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.product-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.product-details ul li {
+    font-size: 16px;
+}
+
+
+/* Стили для всей таблицы */
+table {
+    width: 30%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin: 10px 0;
+}
+
+/* Стили для заголовков */
+th {
+    padding: 6px;
+    text-align: left;
+    background-color: #cc6ce5;
+    border: 1px solid #ddd;
+    width: 50%; /* Устанавливаем ширину столбцов заголовков */    
+}
+
+/* Стили для ячеек данных */
+td {
+    padding: 5px;
+    border: 1px solid #ddd;
+    width: 50%; /* Устанавливаем ширину столбцов данных */
+}
+
+/* Стили для четных строк (через :nth-child) */
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Стили для нечетных строк */
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* При наведении на строки меняем цвет фона */
+tbody tr:hover {
+    background-color: #36d0d7;
+}
+
+
+
+/* Каждый слайд */
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%; /* Ширина изображения займет всю ширину слайдера */
+    height: 400px; /* Устанавливаем фиксированную высоту */
+    object-fit: cover; /* Обрезка изображений с сохранением пропорций */
+}
+
+/* Кнопки навигации */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+    transform: translateY(-50%);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+/* Стиль для текста "Цена" */
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px; /* Добавляем отступ между ценой и описанием */
+}
+/* Кнопка добавления в корзину */
+.add-to-cart-cartfood {
+    min-width: 200px; /* Устанавливаем минимальную ширину кнопки */
+    width: 250px; /* Увеличьте ширину карточки, если она слишком узкая */
+    background-color: #36d0d7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Центрируем кнопку */
+    display: block; /* Делает кнопку блочным элементом */
+    margin-left: auto; /* Центрирует по горизонтали */
+    margin-right: auto; /* Центрирует по горизонтали */
+    /* Добавляем отступы сверху и снизу */
+    margin-top: 20px; /* Расстояние от элементов сверху */
+    margin-bottom: 20px; /* Расстояние от элементов снизу */
+}
+
+    .add-to-cart-cartfood:hover {
+        background-color: #218838;
+    }
+
+    .add-to-cart-cartfood:focus {
+        outline: none;
+    }
+
+/* Стили для заголовка с ценой */
+h3.product-price {
+    font-size: 24px; /* Устанавливаем размер шрифта */
+    font-weight: bold; /* Делаем текст жирным */
+    color: #010101; 
+    margin-top: 10px; /* Добавляем небольшой отступ сверху */
+
+    margin-bottom: 425px; /* Добавляем отступ снизу для хорошего разделения */
+    text-align: center; /* Выравниваем текст по центру */
+    
+    padding: 10px; /* Внутренние отступы для кнопки */
+    padding-left: 20px; /* Добавляем отступ слева */
+    padding-right: 60px; /* Добавляем отступ справа */
+    
+}
+/* Стили для описания цены */
+.price-description {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0; /* Убираем отступы */
+}
+
+/* Стили для описания калорий */
+.calorie-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+/* Контейнер для цены и кнопки */
+.price-and-button {
+    display: flex;
+    align-items: center; /* Выравнивание элементов по вертикали */
+    justify-content: space-between; /* Расстояние между ценой и кнопкой */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

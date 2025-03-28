@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Helthy_Shop.Data.Models.Dish>
+
+
+
+@foreach (var dish in Model)
+{
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+        <div class="product-card">
+            <a href="@Url.Action("Details", "Dishes", new { id = dish.id })" class="product-link">
+                <img src="@Url.Content(dish.img)" alt="@dish.name" />
+                <h3>@dish.name</h3>
+                <!-- Добавляем тип приема пищи под названием блюда -->
+                <p class="meal-type">(@dish.Meal.mealName)</p> <!-- Новая строка для типа приема пищи -->
+                <p class="calories">@dish.calories ккал</p>
+            </a>
+            <div class="tags">
+                @if (dish.Tags != null && dish.Tags.Any())
+                {
+                    foreach (var tag in dish.Tags)
+                    {
+                        <span class="tag @(tag.dietName.ToLower().Replace(" ", "-"))">
+                            @tag.dietName
+                        </span>
+                    }
+                }
+            </div>
+            <p class="product-price">@dish.price ₽</p>
+            <!-- Добавляем data-product-id -->
+            <button class="add-to-cart" data-product-id="@dish.id">Добавить в корзину 🛒</button>
+
+        </div>
+    </div>
+}

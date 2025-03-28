@@ -1,0 +1,92 @@
+﻿/* Центрирование контейнера корзины */
+.cart-container {
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили карточек товаров */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Изображение товара */
+.cart-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* Описание товара */
+.cart-item-details {
+    flex: 1;
+}
+
+/* Кнопка "Удалить" */
+.remove-from-cart {
+    background-color: #2db3b5;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .remove-from-cart:hover {
+        background-color: #238c91; /* Чуть темнее при наведении */
+    }
+/* Кнопка "Оплатить" */
+#checkout-button {
+    background-color: #2db3b5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%; /* Полная ширина */
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+    #checkout-button:hover {
+        background-color: #238c91;
+    }
+
+/* Стили для кнопки "Перейти в корзину" */
+.modal-footer .btn-primary {
+    background-color: #2db3b5; /* Изменяем цвет на бирюзовый */
+    border: none;
+    width: 100%; /* Делаем кнопку широкой */
+    padding: 12px 0; /* Добавляем отступы */
+    font-size: 16px; /* Увеличиваем шрифт */
+    font-weight: bold;
+    text-align: center;
+}
+
+    /* Эффект при наведении */
+    .modal-footer .btn-primary:hover {
+        background-color: #258c8d; /* Затемнённый цвет */
+    }
+
+/* Стили для кнопки "Закрыть" */
+.modal-footer .btn-secondary {
+    background-color: #ccc;
+    color: #333;
+    width: 100%; /* Увеличиваем ширину */
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+    .modal-footer .btn-secondary:hover {
+        background-color: #bbb;
+    }
+
+
+
